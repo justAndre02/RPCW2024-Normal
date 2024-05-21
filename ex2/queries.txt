@@ -95,4 +95,4 @@ WHERE {
     ?disease rdf:type :Disease ;
              :hasTreatment ?treatment .
 }
-GROUP BY ?symptom
+GROUP BY ?treatment
