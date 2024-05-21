@@ -1,0 +1,432 @@
+@prefix : <http://www.semanticweb.org/andre/ontologies/2024/historia/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://www.semanticweb.org/andre/ontologies/2024/historia/> .
+
+<http://www.semanticweb.org/andre/ontologies/2024/historia> rdf:type owl:Ontology .
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#adotadoPor
+:adotadoPor rdf:type owl:ObjectProperty ;
+            owl:inverseOf :temAnimalEstimacao .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#contratadoPor
+:contratadoPor rdf:type owl:ObjectProperty ;
+               owl:inverseOf :temTrabalhadores .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#cria
+:cria rdf:type owl:ObjectProperty ;
+      rdfs:domain :Pessoa ;
+      rdfs:range :Animal .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#cultiva_fruta
+:cultiva_fruta rdf:type owl:ObjectProperty ;
+               rdfs:domain :Pessoa ;
+               rdfs:range :Frutas .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#cultiva_vegetal
+:cultiva_vegetal rdf:type owl:ObjectProperty ;
+                 rdfs:domain :Pessoa ;
+                 rdfs:range :Vegetais .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#esposaDe
+:esposaDe rdf:type owl:ObjectProperty ;
+          owl:inverseOf :temEsposa .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#faz
+:faz rdf:type owl:ObjectProperty ;
+     rdfs:domain :Pessoa ;
+     rdfs:range :Geleias .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#filhoDe
+:filhoDe rdf:type owl:ObjectProperty ;
+         owl:inverseOf :temFilho .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#mora
+:mora rdf:type owl:ObjectProperty ;
+      rdfs:domain :Pessoa ;
+      rdfs:range :Vila .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#recebe
+:recebe rdf:type owl:ObjectProperty ;
+        rdfs:domain :Pessoa ;
+        rdfs:range [ owl:intersectionOf ( :Dinheiro
+                                          :Refeição
+                                        ) ;
+                     rdf:type owl:Class
+                   ] .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#temAnimalEstimacao
+:temAnimalEstimacao rdf:type owl:ObjectProperty ;
+                    rdfs:domain :Pessoa ;
+                    rdfs:range :AnimalEstimacao .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#temEsposa
+:temEsposa rdf:type owl:ObjectProperty ;
+           rdfs:domain :Pessoa ;
+           rdfs:range :Pessoa .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#temFilho
+:temFilho rdf:type owl:ObjectProperty ;
+          rdfs:domain :Pessoa ;
+          rdfs:range :Pessoa .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#temTrabalhadores
+:temTrabalhadores rdf:type owl:ObjectProperty ;
+                  rdfs:domain :Pessoa ;
+                  rdfs:range :Pessoa .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#temVeiculo
+:temVeiculo rdf:type owl:ObjectProperty ;
+            owl:inverseOf :veiculoDe ;
+            rdfs:domain :Pessoa ;
+            rdfs:range :Veículos .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#temVizinho
+:temVizinho rdf:type owl:ObjectProperty ;
+            owl:inverseOf :vizinhoDe ;
+            rdfs:domain :Pessoa ;
+            rdfs:range :Pessoa .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#veiculoDe
+:veiculoDe rdf:type owl:ObjectProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#vende
+:vende rdf:type owl:ObjectProperty ;
+       rdfs:domain :Pessoa ;
+       rdfs:range :Produtos .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#vendeAonde
+:vendeAonde rdf:type owl:ObjectProperty ;
+            rdfs:domain :Pessoa ;
+            rdfs:range :Feira .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#vizinhoDe
+:vizinhoDe rdf:type owl:ObjectProperty .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#dia
+:dia rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#nome_animais
+:nome_animais rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#nome_animal_estimacao
+:nome_animal_estimacao rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#nome_fruta
+:nome_fruta rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#nome_pessoa
+:nome_pessoa rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#nome_vegetal
+:nome_vegetal rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#nome_vila
+:nome_vila rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#quantia_dinheiro
+:quantia_dinheiro rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#refeicao
+:refeicao rdf:type owl:DatatypeProperty .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#tipo_veiculo
+:tipo_veiculo rdf:type owl:DatatypeProperty .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Animal
+:Animal rdf:type owl:Class ;
+        rdfs:subClassOf :Produtos .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#AnimalEstimacao
+:AnimalEstimacao rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Dinheiro
+:Dinheiro rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Feira
+:Feira rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Frutas
+:Frutas rdf:type owl:Class ;
+        rdfs:subClassOf :Produtos .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Geleias
+:Geleias rdf:type owl:Class ;
+         rdfs:subClassOf :Produtos .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Pessoa
+:Pessoa rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Produtos
+:Produtos rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Refeição
+:Refeição rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Vegetais
+:Vegetais rdf:type owl:Class ;
+          rdfs:subClassOf :Produtos .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Veículos
+:Veículos rdf:type owl:Class .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Vila
+:Vila rdf:type owl:Class .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Alface
+:Alface rdf:type owl:NamedIndividual ,
+                 :Vegetais ;
+        :nome_vegetal "Alface" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Ana
+:Ana rdf:type owl:NamedIndividual ,
+              :Pessoa ;
+     :faz :Geleia ;
+     :filhoDe :Sr.Joao ,
+              :Sr.Maria ;
+     :mora :Vila ;
+     :nome_pessoa "Ana" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Banana
+:Banana rdf:type owl:NamedIndividual ,
+                 :Frutas ;
+        :nome_fruta "Banana" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Cenoura
+:Cenoura rdf:type owl:NamedIndividual ,
+                  :Vegetais ;
+         :nome_vegetal "Cenoura" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Feira
+:Feira rdf:type owl:NamedIndividual ,
+                :Feira ;
+       :dia "Sábado" ;
+       :nome_vila "São José" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Galinha
+:Galinha rdf:type owl:NamedIndividual ,
+                  :Animal ;
+         :nome_animais "Galinha" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Geleia
+:Geleia rdf:type owl:NamedIndividual ,
+                 :Geleias ;
+        :nome_fruta "Geleia de Maçã" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Jantar
+:Jantar rdf:type owl:NamedIndividual ,
+                 :Refeição ;
+        :refeicao "Jantar" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Laranja
+:Laranja rdf:type owl:NamedIndividual ,
+                  :Frutas ;
+         :nome_fruta "Laranja" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Maçã
+:Maçã rdf:type owl:NamedIndividual ,
+               :Frutas ;
+      :nome_fruta "Maçã" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Pedro
+:Pedro rdf:type owl:NamedIndividual ,
+                :Pessoa ;
+       :cria :Galinha ,
+             :Porco ,
+             :Vaca ;
+       :filhoDe :Sr.Joao ,
+                :Sr.Maria ;
+       :mora :Vila ;
+       :nome_pessoa "Pedro" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Porco
+:Porco rdf:type owl:NamedIndividual ,
+                :Animal ;
+       :nome_animais "Porco" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Rex
+:Rex rdf:type owl:NamedIndividual ,
+              :AnimalEstimacao ;
+     :adotadoPor :Ana ,
+                 :Pedro ,
+                 :Sr.Joao ,
+                 :Sr.Maria ;
+     :nome_animal_estimacao "Rex" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Sr.Carlos
+:Sr.Carlos rdf:type owl:NamedIndividual ,
+                    :Pessoa ;
+           :cultiva_vegetal :Alface ,
+                            :Cenoura ,
+                            :Tomate ;
+           :mora :Vila ;
+           :vende :Alface ,
+                  :Cenoura ,
+                  :Tomate ;
+           :vendeAonde :Feira ;
+           :vizinhoDe :Ana ,
+                      :Pedro ,
+                      :Sr.Joao ,
+                      :Sr.Maria ;
+           :nome_pessoa "Sr. Carlos" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Sr.Joao
+:Sr.Joao rdf:type owl:NamedIndividual ,
+                  :Pessoa ;
+         :cria :Galinha ,
+               :Porco ,
+               :Vaca ;
+         :cultiva_fruta :Banana ,
+                        :Laranja ,
+                        :Maçã ;
+         :mora :Vila ;
+         :temEsposa :Sr.Maria ;
+         :temTrabalhadores :Trabalhador ;
+         :vende :Banana ,
+                :Galinha ,
+                :Laranja ,
+                :Maçã ,
+                :Porco ,
+                :Vaca ;
+         :vendeAonde :Feira ;
+         :nome_pessoa "Sr. João" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Sr.Maria
+:Sr.Maria rdf:type owl:NamedIndividual ,
+                   :Pessoa ;
+          :cria :Galinha ,
+                :Porco ,
+                :Vaca ;
+          :cultiva_fruta :Banana ,
+                         :Laranja ,
+                         :Maçã ;
+          :esposaDe :Sr.Joao ;
+          :faz :Geleia ;
+          :mora :Vila ;
+          :vende :Geleia ;
+          :vendeAonde :Feira ;
+          :nome_pessoa "Sra. Maria" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Tomate
+:Tomate rdf:type owl:NamedIndividual ,
+                 :Vegetais ;
+        :nome_vegetal "Tomate" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Trabalhador
+:Trabalhador rdf:type owl:NamedIndividual ,
+                      :Pessoa ;
+             :cultiva_fruta :Banana ,
+                            :Laranja ,
+                            :Maçã ;
+             :recebe :Jantar ,
+                     <http://www.semanticweb.org/andre/ontologies/2024/historia#50$> ;
+             :nome_pessoa "Trabalhador 1" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Trator
+:Trator rdf:type owl:NamedIndividual ,
+                 :Veículos ;
+        :veiculoDe :Ana ,
+                   :Pedro ,
+                   :Sr.Joao ,
+                   :Sr.Maria ;
+        :tipo_veiculo "Trator" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Vaca
+:Vaca rdf:type owl:NamedIndividual ,
+               :Animal ;
+      :nome_animais "Vaca" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#Vila
+:Vila rdf:type owl:NamedIndividual ,
+               :Vila ;
+      :nome_vila "São José" .
+
+
+###  http://www.semanticweb.org/andre/ontologies/2024/historia#50$
+<http://www.semanticweb.org/andre/ontologies/2024/historia#50$> rdf:type owl:NamedIndividual ,
+                                                                         :Dinheiro ;
+                                                                :quantia_dinheiro 50 .
+
+
+###  Generated by the OWL API (version 4.5.26.2023-07-17T20:34:13Z) https://github.com/owlcs/owlapi
